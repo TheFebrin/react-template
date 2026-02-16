@@ -1,0 +1,12 @@
+# Style and Conventions
+- Language: TypeScript with strict mode enabled.
+- React style: functional components and hooks.
+- Module system: ESM (`"type": "module"`).
+- JSX runtime: `react-jsx`.
+- Linting: ESLint flat config with:
+  - `@eslint/js` recommended
+  - `typescript-eslint` recommended
+  - `eslint-plugin-react-hooks` recommended
+  - `eslint-plugin-react-refresh` Vite rules
+- TS safety flags include `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`.
+- Current naming follows Vite React template defaults (`App.tsx`, `main.tsx`).

@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+# React Vibe Coding Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern Vite template for React + TypeScript with Tailwind CSS v4 and shadcn/ui preconfigured.
 
-Currently, two official plugins are available:
+## Stack
+- React 19
+- TypeScript 5 (strict mode)
+- Vite 7
+- Tailwind CSS v4 via `@tailwindcss/vite`
+- shadcn/ui
+- ESLint 9 (flat config)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Quick Start
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Available Scripts
+- `npm run dev` - start local dev server
+- `npm run build` - type-check and build for production
+- `npm run preview` - preview production build
+- `npm run lint` - run ESLint
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tailwind + shadcn Setup
+- Tailwind is loaded in `src/index.css`.
+- shadcn is initialized with `components.json`.
+- Example UI component path: `src/components/ui/button.tsx`.
+
+## Path Alias
+Use `@/` for source imports.
+
+Configured in:
+- `tsconfig.json`
+- `tsconfig.app.json`
+- `vite.config.ts`
+
+Example:
+```ts
+import { Button } from "@/components/ui/button"
 ```
+
+## Project Layout
+```text
+src/
+  App.tsx
+  main.tsx
+  index.css
+  components/ui/
+  lib/utils.ts
+.ai/
+  specs/
+  skills/
+```
+
+## Agent/AI Notes
+- Repository guidance: `AGENTS.md`
+- Specs guidance: `.ai/specs/AGENTS.md`
+- Local skills: `.ai/skills/*`
+- Serena project state/memories: `.serena/`
+
